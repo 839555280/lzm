@@ -5,9 +5,9 @@
 1.http://127.0.0.2/直接访问更目录为批量添加用户操作  
 2.http://127.0.0.2/login 登录页面  
 3.http://127.0.0.2/user 为用户信息页 内涵无下级用户列表页及配置页面  
-4.http://127.0.0.2/register?user_id=97 推广页面为新用户注册页面，注册时会给上级和上上级增加积分（无user_id的为直接注册新用户，无积分操作）  
-5.app\Console\Commands\integral.php 该文件为计划任务脚本文件   
-    app\Console\Kernel.php 改文件为计划任务调用配置文件  
+4.http://127.0.0.2/register?user_id=97 推广页面为新用户注册页面，注册时会给上级和上上级增加积分（无user_id的为直接注册新用户，无积分操作)  
+5.app\Console\Commands\integral.php 该文件为计划任务脚本文件  
+app\Console\Kernel.php 改文件为计划任务调用配置文件  
 
 
 ## 相关文件
