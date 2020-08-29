@@ -55,7 +55,7 @@ class IndexController extends Controller
 
         if($is_find){
             error('用户已存在');
-            return back();
+            return ;
         }
         if($request->input('user_id')){
             $data = [
@@ -83,12 +83,15 @@ class IndexController extends Controller
     public function info($id){
 
         $user = User::where(['up_id'=>$id])->get()->toArray();
-        $this->user_list=array_merge($this->user_list,$user);
-        if(count($user) > 0){
-            foreach($user as $v){
-                $this->info($v['id']);
+
+        foreach ($user as $key=>$value){
+            $this->user_list = array_merge($this->user_list,[$value]);
+            $user = User::where(['up_id'=>$value['id']])->get()->toArray();
+            if($user){
+                $this->info($value['id']);
             }
         }
+        
         $users_list = $this->user_list;
 
         return view('index.info',compact('users_list'));
